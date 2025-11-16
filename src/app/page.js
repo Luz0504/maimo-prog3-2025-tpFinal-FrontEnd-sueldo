@@ -1,11 +1,9 @@
-import Image from "next/image";
+import HomeContainer from "./components/HomeContainer";
 
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-     WindieCity
-     <h2>Users</h2>
-     <p>#Undertale #YumeNikki</p>
+     <HomeContainer/>
     </div>
   );
 }
