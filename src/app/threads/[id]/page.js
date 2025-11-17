@@ -1,9 +1,9 @@
-import React from 'react'
+import ThreadsContainer from "@/app/components/ThreadsContainer";
 
-const page = () => {
-  return (
-    <div>page</div>
-  )
-}
+const PageThread = async ({ params }) => {
+  const { id } = await params;
 
-export default page
+  return <ThreadsContainer id={id} />;
+};
+
+export default PageThread;

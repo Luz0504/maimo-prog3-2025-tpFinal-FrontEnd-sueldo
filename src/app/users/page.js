@@ -1,9 +1,12 @@
 import React from 'react'
+import UsersContainer from '../components/UsersContainer'
 
-const page = () => {
+const pageUsers = () => {
   return (
-    <div>page</div>
+    <div>
+      <UsersContainer/>
+    </div>
   )
 }
 
-export default page
+export default pageUsers

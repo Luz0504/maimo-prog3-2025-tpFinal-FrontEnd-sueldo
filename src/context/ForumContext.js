@@ -22,7 +22,11 @@ export const ForumContextProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 
+  //Foros
   const getAllForums = useCallback(async () => {
+    setLoading(true);
+    setError(false);
+
     try {
       const res = await axios.get(`${API}/forums`);
       setForums(res.data.forums);
@@ -33,8 +37,13 @@ export const ForumContextProvider = ({ children }) => {
     }
   }, [API]);
 
+  //Threads por foro
   const getThreadsByForum = useCallback(
     async (forumId) => {
+      setLoading(true);
+      setError(false);
+      setThreads([]);
+
       try {
         const res = await axios.get(`${API}/forums/${forumId}/threads`);
         setThreads(res.data.threads);
@@ -47,8 +56,13 @@ export const ForumContextProvider = ({ children }) => {
     [API]
   );
 
+  //Posts por thread
   const getPostsByThread = useCallback(
     async (threadId) => {
+      setLoading(true);
+      setError(false);
+      setPosts([]);
+
       try {
         const res = await axios.get(`${API}/threads/${threadId}/posts`);
         setPosts(res.data.posts);
@@ -61,7 +75,11 @@ export const ForumContextProvider = ({ children }) => {
     [API]
   );
 
+  //Users
   const getAllUsers = useCallback(async () => {
+    setLoading(true);
+    setError(false);
+
     try {
       const res = await axios.get(`${API}/users`);
       setUsers(res.data.users);
