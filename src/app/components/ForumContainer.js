@@ -22,7 +22,7 @@ const ForumContainer = ({ id }) => {
             <Link href={"/"}>
               <h1 className="font-bold text-center"> ￩ Volver a la home</h1>
             </Link>
-            <h1 className="text-3xl font-bold text-center mb-6">
+            <h1 className="text-3xl font-bold text-center mb-6 text-pink-500">
               {thisForum.name}
             </h1>
           </div>

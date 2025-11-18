@@ -7,30 +7,17 @@ const HomeContainer = () => {
   const { forums, loading, error } = useForumContext();
 
   return (
-    <div
-      className="px-6 py-8 max-w-3xl mx-auto
-      min-h-screen text-purple-900 font-semibold"
-    >
+    <div className="px-6 py-8 text-purple-900 font-semibold">
       {!loading && !error && (
         <>
-          <h1
-            className="text-3xl font-bold mb-6
-            text-pink-500
-          "
-          >
-            Foros
-          </h1>
+          <h1 className="text-3xl font-bold mb-6 text-pink-500">Foros</h1>
 
-          <div className="flex flex-col gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-1 gap-4">
             {forums.map((forum) => (
               <Link
                 key={forum._id}
-                href={`forums/${forum._id}`}
-                className="
-                  block p-5 rounded-2xl border-4
-                  bg-cyan-50
-                  hover:scale-[1.02] transition-all duration-200
-                "
+                href={`/forums/${forum._id}`}
+                className="p-5 rounded-2xl border-4 bg-cyan-50 hover:scale-[1.02] transition-all duration-200"
               >
                 <h2 className="text-2xl font-bold text-purple-700 mb-2">
                   {forum.name}

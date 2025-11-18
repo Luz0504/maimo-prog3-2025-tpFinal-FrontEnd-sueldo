@@ -12,10 +12,10 @@ const NavBar = () => {
       <div className="flex items-center justify-between px-6 py-4">
         <Link href="/">
           <Image
-          src={'/assets/Windiecity.gif'}
-          width={200}
-          height={100}
-          alt='Windie'
+            src={"/assets/Windiecity.gif"}
+            width={200}
+            height={100}
+            alt="Windie"
           />
         </Link>
         <button

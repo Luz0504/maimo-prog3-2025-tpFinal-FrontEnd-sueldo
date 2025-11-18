@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const ThreadsContainer = ({ id }) => {
-  const { forums, threads, posts, loading, error, getPostsByThread, getUserID } =
+  const { threads, posts, loading, getPostsByThread, getUserID } =
     useForumContext();
 
   const thisThread = threads.find((thre) => thre._id === id);
@@ -21,13 +21,13 @@ const ThreadsContainer = ({ id }) => {
 
       {!loading && (
         <>
-        <div className="flex flex-row justify-between items-center">
+          <div className="flex flex-row justify-between items-center">
             <Link href={`/`}>
               <h1 className="font-bold text-center"> ￩ Volver a la home</h1>
             </Link>
-          <h1 className="text-3xl font-bold text-center mb-6">
-            {thisThread?.title ?? "Thread"}
-          </h1>
+            <h1 className="text-3xl font-bold text-center mb-6 text-pink-500">
+              {thisThread?.title ?? "Thread"}
+            </h1>
           </div>
 
           <div className="flex flex-col gap-4">
@@ -64,7 +64,7 @@ const ThreadsContainer = ({ id }) => {
                         alt={user.username}
                         className="rounded-full border border-black"
                       />
-                      <p className="text-sm text-black font-semibold">
+                      <p className="text-lg text-black font-semibold">
                         {user.username}
                       </p>
                     </div>
