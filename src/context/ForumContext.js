@@ -90,6 +90,10 @@ export const ForumContextProvider = ({ children }) => {
     }
   }, [API]);
 
+  const getUserID = useCallback((id) => {
+  return users.find((u) => u._id === id);
+}, [users]);
+
   useEffect(() => {
     const init = async () => {
       setLoading(true);
@@ -108,6 +112,7 @@ export const ForumContextProvider = ({ children }) => {
         threads,
         posts,
         users,
+        getUserID,
         loading,
         error,
         getAllForums,

@@ -1,13 +1,13 @@
-import React from 'react'
+import React from "react";
 
 const Footer = () => {
   return (
-    <div className='flex flex-row mx-10'>
-        <h1>
-            copyright WindieCity
-        </h1>
-    </div>
-  )
-}
+    <footer className="w-full bg-gray-100 mt-10 py-4">
+      <div className="px-6 text-center text-sm text-gray-600">
+        © {new Date().getFullYear()} WindieCity — Todos los derechos reservados.
+      </div>
+    </footer>
+  );
+};
 
-export default Footer
+export default Footer;
