@@ -7,7 +7,7 @@ const HomeContainer = () => {
   const { forums, loading, error } = useForumContext();
 
   return (
-    <div className="px-6 py-8 text-purple-900 font-semibold">
+    <div className="text-purple-900 font-semibold">
       {!loading && !error && (
         <>
           <h1 className="text-3xl font-bold mb-6 text-pink-500">Foros</h1>
@@ -17,7 +17,7 @@ const HomeContainer = () => {
               <Link
                 key={forum._id}
                 href={`/forums/${forum._id}`}
-                className="p-5 rounded-2xl border-4 bg-cyan-50 hover:scale-[1.02] transition-all duration-200"
+                className="p-4 bg-cyan-50  rounded-2xl border-4 border-purple-900 shadow-sm hover:shadow-md shadow-pink-300 hover:scale-[1.02] duration-200 transition-all"
               >
                 <h2 className="text-2xl font-bold text-purple-700 mb-2">
                   {forum.name}
@@ -31,10 +31,10 @@ const HomeContainer = () => {
         </>
       )}
 
-      {loading && <p className="text-center py-6">Cargando foros...</p>}
+      {loading && <p className="text-center py-6 text-white">Cargando foros...</p>}
 
       {!loading && error && (
-        <p className="text-center py-6 text-red-500">Error cargando foros</p>
+        <p className="text-center py-6 text-pink-500">Error cargando foros</p>
       )}
     </div>
   );

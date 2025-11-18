@@ -33,15 +33,15 @@ const ForumContainer = ({ id }) => {
                 <Link
                   key={thread._id}
                   href={`/threads/${thread._id}`}
-                  className="block p-4 bg-white border rounded-xl shadow-sm hover:shadow-md transition-shadow"
+                  className="p-4 bg-cyan-50  rounded-2xl border-4 border-purple-900 shadow-sm hover:shadow-md shadow-pink-300 hover:scale-[1.02] duration-200 transition-all"
                 >
-                  <p className="text-lg font-medium text-gray-800">
+                  <p className="text-xl font-bold text-purple-900">
                     {thread.title}
                   </p>
                 </Link>
               ))
             ) : (
-              <p className="text-center text-gray-500">
+              <p className="text-center text-white">
                 No hay threads en este foro todavía.
               </p>
             )}
@@ -50,11 +50,11 @@ const ForumContainer = ({ id }) => {
       )}
 
       {loading && (
-        <p className="text-center py-6 text-gray-600">Cargando threads...</p>
+        <p className="text-center py-6 text-white">Cargando threads...</p>
       )}
 
       {!loading && error && (
-        <p className="text-center py-6 text-red-500">Error al cargar</p>
+        <p className="text-center py-6 text-pink-500">Error al cargar</p>
       )}
     </section>
   );

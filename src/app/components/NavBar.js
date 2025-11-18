@@ -8,7 +8,7 @@ const NavBar = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="w-full bg-purple-100 shadow-md text-black">
+    <nav className="w-full bg-purple-100 shadow-md text-black pr-5">
       <div className="flex items-center justify-between px-6 py-4">
         <Link href="/">
           <Image

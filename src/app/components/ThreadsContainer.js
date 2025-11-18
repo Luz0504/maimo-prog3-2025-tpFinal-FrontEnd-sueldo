@@ -54,7 +54,7 @@ const ThreadsContainer = ({ id }) => {
                 return (
                   <div
                     key={pos._id}
-                    className="p-4 bg-white border rounded-xl shadow-sm hover:shadow-md transition-shadow"
+                    className="p-4 bg-white rounded-xl border-4 border-purple-900 shadow-sm hover:shadow-md transition-shadow"
                   >
                     <div className="flex flex-row items-center gap-4">
                       <Image
