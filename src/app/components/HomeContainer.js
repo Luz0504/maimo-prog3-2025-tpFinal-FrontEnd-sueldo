@@ -7,12 +7,12 @@ const HomeContainer = () => {
   const { forums, loading, error } = useForumContext();
 
   return (
-    <div className="text-purple-900 font-semibold">
+    <div className="m-10 text-purple-900 font-semibold md:mx-5 md:p-5">
       {!loading && !error && (
         <>
           <h1 className="text-3xl font-bold mb-6 text-pink-500">Foros</h1>
 
-          <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-1 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-1 gap-4 ">
             {forums.map((forum) => (
               <Link
                 key={forum._id}
