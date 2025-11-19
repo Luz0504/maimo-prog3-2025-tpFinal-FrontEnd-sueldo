@@ -18,7 +18,6 @@ export const ForumContextProvider = ({ children }) => {
   const [threads, setThreads] = useState([]);
   const [posts, setPosts] = useState([]);
   const [users, setUsers] = useState([]);
-  const [lastForumId, setLastForumId] = useState(null);
 
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
