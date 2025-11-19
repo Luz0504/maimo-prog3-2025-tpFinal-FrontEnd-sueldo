@@ -14,40 +14,48 @@ const ForumContainer = ({ id }) => {
     if (id) getThreadsByForum(id);
   }, [id, getThreadsByForum]);
 
-  if (loading)
-    return <p className="text-center py-6 text-gray-600">Cargando threads...</p>;
-
-  if (error)
-    return <p className="text-center py-6 text-red-500">Error al cargar</p>;
-
-  if (!thisForum)
-    return <p className="text-center py-6 text-gray-500">Foro no encontrado</p>;
-
   return (
     <section className="px-6 py-8 max-w-3xl mx-auto">
-      <h1 className="text-3xl font-bold text-center mb-6">
-        {thisForum.name}
-      </h1>
-
-      <div className="flex flex-col gap-4">
-        {threads.length > 0 ? (
-          threads.map((thread) => (
-            <Link
-              key={thread._id}
-              href={`/threads/${thread._id}`}
-              className="block p-4 bg-white border rounded-xl shadow-sm hover:shadow-md transition-shadow"
-            >
-              <p className="text-lg font-medium text-gray-800">
-                {thread.title}
-              </p>
+      {!loading && !error && thisForum && (
+        <>
+          <div className="flex flex-row justify-between items-center">
+            <Link href={"/"}>
+              <h1 className="font-bold text-center"> ￩ Volver a la home</h1>
             </Link>
-          ))
-        ) : (
-          <p className="text-center text-gray-500">
-            No hay threads en este foro todavía.
-          </p>
-        )}
-      </div>
+            <h1 className="text-3xl font-bold text-center mb-6 text-pink-500">
+              {thisForum.name}
+            </h1>
+          </div>
+
+          <div className="flex flex-col gap-4">
+            {threads.length > 0 ? (
+              threads.map((thread) => (
+                <Link
+                  key={thread._id}
+                  href={`/threads/${thread._id}`}
+                  className="p-4 bg-cyan-50  rounded-2xl border-4 border-purple-900 shadow-sm hover:shadow-md shadow-pink-300 hover:scale-[1.02] duration-200 transition-all"
+                >
+                  <p className="text-xl font-bold text-purple-900">
+                    {thread.title}
+                  </p>
+                </Link>
+              ))
+            ) : (
+              <p className="text-center text-white">
+                No hay threads en este foro todavía.
+              </p>
+            )}
+          </div>
+        </>
+      )}
+
+      {loading && (
+        <p className="text-center py-6 text-white">Cargando threads...</p>
+      )}
+
+      {!loading && error && (
+        <p className="text-center py-6 text-pink-500">Error al cargar</p>
+      )}
     </section>
   );
 };

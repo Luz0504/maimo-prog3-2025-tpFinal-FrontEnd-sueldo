@@ -1,10 +1,8 @@
-import React from "react";
-
 const Footer = () => {
   return (
-    <footer className="w-full bg-gray-100 mt-10 py-4">
-      <div className="px-6 text-center text-sm text-gray-600">
-        © {new Date().getFullYear()} WindieCity — Todos los derechos reservados.
+    <footer className="w-full bg-purple-200 max-h-screen py-4">
+      <div className="px-6 text-center text-sm text-purple-800">
+        © 2025 WindieCity — Todos los derechos reservados.
       </div>
     </footer>
   );

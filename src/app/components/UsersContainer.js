@@ -14,7 +14,7 @@ const UsersContainer = () => {
         {users.map((user) => (
           <div
             key={user._id}
-            className="p-4 bg-white border rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col items-center"
+            className="p-4 bg-white border-4 rounded-xl shadow-sm hover:shadow-md flex flex-col items-center border-purple-900"
           >
             <div className="w-28 h-28 rounded-full overflow-hidden mb-3 border">
               <Image
@@ -26,7 +26,7 @@ const UsersContainer = () => {
               />
             </div>
 
-            <h2 className="text-lg font-semibold text-gray-800">
+            <h2 className="text-lg font-semibold text-purple-800">
               {user.username}
             </h2>
           </div>

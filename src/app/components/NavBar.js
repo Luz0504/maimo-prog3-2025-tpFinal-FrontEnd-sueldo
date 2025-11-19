@@ -2,18 +2,22 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import Image from "next/image";
 
 const NavBar = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="w-full bg-white shadow-md text-black">
+    <nav className="w-full bg-purple-100 shadow-md text-black pr-5">
       <div className="flex items-center justify-between px-6 py-4">
         <Link href="/">
-          <h1 className="text-xl font-semibold">WindieCity</h1>
+          <Image
+            src={"/assets/Windiecity.gif"}
+            width={200}
+            height={100}
+            alt="Windie"
+          />
         </Link>
-
-        {/* Botón hamburguesa mobile */}
         <button
           className="md:hidden flex flex-col gap-1"
           onClick={() => setOpen(!open)}
@@ -23,28 +27,26 @@ const NavBar = () => {
           <span className="block w-6 h-0.5 bg-black"></span>
         </button>
 
-        {/* Menú desktop */}
-        <ul className="hidden  md:flex gap-6 text-lg">
+        <ul className="hidden md:flex gap-6 text-lg">
           <li>
-            <Link href="/users" className="hover:text-blue-600">
+            <Link href="/users" className="hover:text-purple-800">
               Users
             </Link>
           </li>
           <li>
-            <Link href="/about" className="hover:text-blue-600">
+            <Link href="/about" className="hover:text-purple-800">
               About
             </Link>
           </li>
         </ul>
       </div>
 
-      {/* Menú mobile */}
       {open && (
         <ul className="md:hidden flex flex-col px-6 pb-4 gap-3 text-lg">
           <li>
             <Link
               href="/users"
-              className="hover:text-blue-600"
+              className="hover:text-purple-800"
               onClick={() => setOpen(false)}
             >
               Users
@@ -53,7 +55,7 @@ const NavBar = () => {
           <li>
             <Link
               href="/about"
-              className="hover:text-blue-600"
+              className="hover:text-purple-800"
               onClick={() => setOpen(false)}
             >
               About

@@ -18,6 +18,7 @@ export const ForumContextProvider = ({ children }) => {
   const [threads, setThreads] = useState([]);
   const [posts, setPosts] = useState([]);
   const [users, setUsers] = useState([]);
+  const [lastForumId, setLastForumId] = useState(null);
 
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
@@ -43,7 +44,6 @@ export const ForumContextProvider = ({ children }) => {
       setLoading(true);
       setError(false);
       setThreads([]);
-
       try {
         const res = await axios.get(`${API}/forums/${forumId}/threads`);
         setThreads(res.data.threads);
@@ -62,7 +62,6 @@ export const ForumContextProvider = ({ children }) => {
       setLoading(true);
       setError(false);
       setPosts([]);
-
       try {
         const res = await axios.get(`${API}/threads/${threadId}/posts`);
         setPosts(res.data.posts);

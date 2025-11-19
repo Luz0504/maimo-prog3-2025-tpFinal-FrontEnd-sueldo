@@ -1,9 +1,9 @@
-import React from 'react'
+import AboutContainer from "../components/AboutContainer"
 
 const page = () => {
   return (
     <div>
-      Buenas
+      <AboutContainer/>
     </div>
   )
 }
